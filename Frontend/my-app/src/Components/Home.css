@@ -1,23 +1,27 @@
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #f8f8f8;
+/* General Styles */
+.home-container {
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+  color: #333;
 }
 
-/* Header and Video Section */
+/* Video Section */
 .header {
   position: relative;
-  height: 70vh;
+  width: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 
 .background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 180%;
+  height: 100%;
   object-fit: cover;
+  z-index: -1;
 }
 
 .video-overlay {
@@ -27,214 +31,84 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .video-overlay h1 {
-  font-size: 2.5rem;
-  margin: 0 0 10px;
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .video-overlay p {
-  font-size: 1.2rem;
-  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Slider Section */
 .slider-section {
-  padding: 40px;
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
   text-align: center;
-  background-color: #ffffff;
-}
-
-.slider-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #333;
 }
 
 .card {
-  padding: 40px; /* Increased padding for bigger cards */
-  background: #f9f9f9;
-  border-radius: 15px; /* Slightly rounded corners for bigger cards */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Larger shadow for bigger cards */
-  transition: transform 0.3s, box-shadow 0.3s;
-  width: 350px; /* Increased card width */
-  margin: 20px; /* Adjusted margin for spacing between cards */
 }
 
 .card:hover {
-  transform: translateY(-10px); /* More noticeable hover effect */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Bigger shadow on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
 }
 
 .card-image {
   width: 100%;
-  height: 250px; /* Increased image height */
-  object-fit: cover;
-  border-radius: 15px; /* Rounded corners for image */
-  margin-bottom: 15px; /* More space below the image */
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.05);
 }
 
 .card h3 {
-  font-size: 1.8rem; /* Larger font size for headings */
-  margin: 15px 0;
-  color: #333; /* Darker color for better readability */
+  font-size: 1.8rem;
+  color: #34495e;
+  margin-bottom: 10px;
 }
 
 .card p {
-  font-size: 1.2rem; /* Increased font size for paragraph */
-  color: #666; /* Lighter color for the paragraph text */
-  line-height: 1.6; /* Increased line height for better readability */
+  font-size: 1rem;
+  color: #7f8c8d;
+  line-height: 1.6;
 }
-/* ==================================================================== */
-/* Carousel Slider Styles */
-.container.slider {
-  margin: auto;
-  max-width: 1200px;
-}
-
-.carousel-inner {
-  display: flex;
-  align-items: center;
-}
-
-.carousel-item {
-  display: none;
-  text-align: center;
-}
-
-.carousel-item.active {
-  display: block;
-}
-
-.carousel-row {
-  padding: 20px 0;
-  display: flex;
-  justify-content: space-between;
-}
-
-.carousel-row img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 768px) {
-  .carousel-row {
-    flex-wrap: wrap;
-  }
-}
-
-/* ================================================================== */
-
 
 /* Info Section */
 .info-section {
-  background: #f4f4f4;
-  padding: 40px 20px;
+  padding: 60px 20px;
   text-align: center;
-  background-color: rgb(214, 224, 218);
+  background: linear-gradient(to top, #ffffff, #ecf0f1);
 }
 
 .info-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #34495e;
+  font-weight: bold;
 }
 
-.info-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  text-align: center;
+.info-section p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  line-height: 1.8;
 }
-
-.info-item {
-  flex: 1 1 calc(33.333% - 40px);
-  max-width: 300px;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.info-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.info-item h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #555;
-}
-
-.info-item p {
-  font-size: 1rem;
-  color: #777;
-}
-
-
-/* General container and slider styles */
-.container.slider {
-  background-color: white;
-  width: 100%; /* Full width */
-  padding: 20px; /* Add padding around the slider */
-}
-
-.carousel-inner {
-  padding: 20px 0; /* Padding for carousel items */
-}
-
-.image-row {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.carousel-img {
-  display: block;
-  width: 200px;
-  height: 200px;
-  border: thin solid black;
-  margin: 10px auto; /* Add margin for centering images */
-  padding-top: 20px;
-}
-
-/* Additional styles for active carousel items (if needed) */
-.carousel-item {
-  display: flex;
-  justify-content: space-between; /* Add space between columns */
-}
-
-/* Media queries for responsive design */
-@media (max-width: 768px) {
-  .carousel-img {
-    width: 150px;
-    height: 150px;
-  }
-}
-
-@media (max-width: 480px) {
-  .carousel-img {
-    width: 120px;
-    height: 120px;
-  }
-}
-
-/* Footer */
-/* .footer {
-  text-align: center;
-  padding: 20px;
-  background: #202020;
-  color: white;
-  font-size: 0.9rem;
-} */
-
-

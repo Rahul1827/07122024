@@ -1,4 +1,4 @@
-body, ul, li, a {
+/* body, ul, li, a {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -158,4 +158,119 @@ body, ul, li, a {
     width: 100%;
     left: 0;
   }
+} */
+
+
+/* Navbar CSS */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent; /* Transparent initially */
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  padding: 15px 30px;
+}
+
+.navbar-scrolled {
+  background-color: white; /* Changes to white when scrolled */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds shadow for distinction */
+}
+
+.navbar .navbar-logo {
+  height: 55px;
+  width: 300px;
+  image-resolution: 100px;
+}
+
+.navbar .nav-link {
+  color: black; /* Black text */
+  transition: color 0.4s ease;
+}
+
+/* Dropdown Menu - Default State */
+.navbar .dropdown-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  background-color: white; /* Ensure visibility over background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Dropdown Menu - Visible on Interaction */
+.navbar .dropdown:hover .dropdown-menu,
+.navbar .dropdown-toggle:focus + .dropdown-menu {
+  display: block; /* Show the dropdown menu */
+}
+
+/* Dropdown Menu Items */
+.navbar .dropdown-menu .dropdown-item {
+  padding: 10px 15px;
+  color: black;
+  transition: background-color 0.2s ease;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Highlight on hover */
+}
+
+/* Ensure Dropdown Works in Mobile View */
+.navbar-toggler[aria-expanded="true"] + .collapse .dropdown-menu {
+  display: block; /* Allow dropdown in mobile view */
+}
+
+/* Fix Z-Index Issues for Overlapping Elements */
+.navbar .dropdown-menu {
+  z-index: 1050;
+}
+
+.navbar-toggler-icon {
+  background-color: black; /* Adjust for better visibility */
+}
+
+.navbar-toggler {
+  border-color: transparent;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .nav-item {
+    margin-bottom: 10px;
+  }
+}
+/* Logo Styling */
+.navbar-logo {
+  height: 55px; /* Set the logo height */
+  width: auto; /* Maintain aspect ratio */
+  display: block;
+}
+
+/* Adjust for Mobile Screens */
+@media (max-width: 768px) {
+  .navbar-logo {
+    height: 40px; /* Smaller logo for mobile view */
+  }
+}
+/* Center navbar tabs with proper spacing */
+.navbar-nav {
+  margin: 0 auto; /* Center the nav links */
+  display: flex; /* Use flexbox to align items */
+  gap: 20px; /* Add spacing between tabs */
+}
+
+.nav-item {
+  text-align: center; /* Ensure tabs are centered */
 }
