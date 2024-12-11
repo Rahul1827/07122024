@@ -22,6 +22,7 @@ export default function BookFieldVisit() {
   };
 
   return (
+    <div className="serviceimg">
     <div className="visit-container">
       <h2 className="visit-title">Book Field Visit</h2>
       <form onSubmit={handleSubmit}>
@@ -84,6 +85,7 @@ export default function BookFieldVisit() {
           Book Visit
         </button>
       </form>
+    </div>
     </div>
   );
 }
